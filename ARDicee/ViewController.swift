@@ -24,7 +24,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = true
         
         //let cube = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0.01)
-        let sphere = SCNSphere(radius: 0.1)
+        /*let sphere = SCNSphere(radius: 0.1)
         
         let material = SCNMaterial()
         material.diffuse.contents = UIImage(named: "art.scnassets/8k_moon.jpg")
@@ -36,15 +36,21 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         node.geometry = sphere
         
-        sceneView.scene.rootNode.addChildNode(node)
+        sceneView.scene.rootNode.addChildNode(node)*/
         
         sceneView.autoenablesDefaultLighting = true
         
-       /* // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        // Create a new scene
+        let diceScene = SCNScene(named: "art.scnassets/diceCollada.scn")!
         
-        // Set the scene to the view
-        sceneView.scene = scene*/
+        if let diceNode = diceScene.rootNode.childNode(withName: "Dice", recursively: true){
+        
+            diceNode.position = SCNVector3(x: 0, y:0, z: -0.1)
+            
+            sceneView.scene.rootNode.addChildNode(diceNode)
+        }
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
