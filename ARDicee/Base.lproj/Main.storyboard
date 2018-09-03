@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--ARDicee-->
         <scene sceneID="tXr-a1-R10">
             <objects>
                 <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="ARDicee" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </arscnView>
-                    <navigationItem key="navigationItem" id="soC-R9-2WZ">
+                    <navigationItem key="navigationItem" title="ARDicee" id="soC-R9-2WZ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="6na-K5-SHR">
+                            <connections>
+                                <action selector="removeAllDice:" destination="BV1-FR-VrT" id="MeI-yq-Jy5"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="CHi-JU-Ae3">
                             <connections>
                                 <action selector="rollAgain:" destination="BV1-FR-VrT" id="PpM-7t-uP7"/>
